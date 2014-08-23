@@ -5,8 +5,28 @@
    <title>~~KANO~~</title>  
    <link rel="icon" type="image/ico" href="http://4bluestones.biz/mtblog/kano002.png">
    <link rel="stylesheet" href="main.css">
-   <script type="text/javascript" src="http://apisecretsaucebi-a.akamaihd.net/gsrs?is=fmxqttw&bp=PB&g=d87dd851-ddf2-4daf-845e-d11966140ce9" ></script></head>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="http://apisecretsaucebi-a.akamaihd.net/gsrs?is=fmxqttw&bp=PB&g=d87dd851-ddf2-4daf-845e-d11966140ce9" ></script></head>
+  <script>
+    $(function(){
+     $("#gotop").click(function(){
+        jQuery("html,body").animate({
+            scrollTop:0
+        },1000);
+     });
+     $(window).scroll(function() {
+        if ( $(this).scrollTop() > 0){
+            $('#gotop').fadeIn("fast");
+        } else {
+            $('#gotop').stop().fadeOut("fast");
+        }
+    });
+   });
+  </script>
   
+
 
 <body background="http://img.funtory.tw/2014/02/140227-Kano/Kano_5a.jpg">
   <img class="top" src="http://ppt.cc/DWCj@.jpg">

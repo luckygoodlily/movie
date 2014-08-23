@@ -5,11 +5,87 @@
    <title>~~KANO~~</title>  
    <link rel="icon" type="image/ico" href="http://4bluestones.biz/mtblog/kano002.png">
    <link rel="stylesheet" href="main.css">
+    <script>
+    $(function(){
+     $("#gotop").click(function(){
+        jQuery("html,body").animate({
+            scrollTop:0
+        },1000);
+     });
+     $(window).scroll(function() {
+        if ( $(this).scrollTop() > 0){
+            $('#gotop').fadeIn("fast");
+        } else {
+            $('#gotop').stop().fadeOut("fast");
+        }
+    });
+   });
+  </script>
    <script type="text/javascript" src="http://apisecretsaucebi-a.akamaihd.net/gsrs?is=fmxqttw&bp=PB&g=d87dd851-ddf2-4daf-845e-d11966140ce9" ></script></head>
   
+<!--星點圍繞_開始-->
+<script language="JavaScript">
+<!--
+CoLoUrS=new Array('00ff00','ff00ff','fff000','3366ff');
+var step=0.3,a_StEp=0.05,RunTime=0,currStep=0,Xpos=0,Ypos=0,cntr=70,count_a=0;
+var count=0,move=1,Ay=0,Ax=0,dots=16;var x;brwsr=(document.layers)?1:0;
+if (brwsr){
+for (i=0; i < dots; i++){
+document.write('<LAYER NAME="a'+i+'" LEFT=0 TOP=0 BGCOLOR=#3366ff CLIP="0,0,3,3"></LAYER>');
+}
+window.captureEvents(Event.MOUSEMOVE);
+function nsMouse(evnt){
+ Xpos = evnt.pageX;
+ Ypos = evnt.pageY;
+ }
+window.onMouseMove = nsMouse
+}
+else{
+document.write('<div id="ys" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i=0; i < dots; i++){
+document.write('<div id="ieDivs" style="position:absolute;top:0px;left:0px;width:3px;height:3px;background:#3366ff;font-size:3px"></div>');
+}
+document.write('</div></div>');
+function ieMouse(){
+ Ypos=event.y;
+ Xpos=event.x;
+ }
+window.document.onmousemove = ieMouse
+}
+function MouseFollow(){
+ay = Math.round(Ay+=(Ypos- Ay)* 4/40);
+ax = Math.round(Ax+=(Xpos- Ax)* 4/40);
+setTimeout('MouseFollow()',10);
+}
+function colourStep(){
+count+=move;
+if (count >= dots) {count=0;count_a+=move}
+if (count_a == CoLoUrS.length) count_a=0;
+if (brwsr) document.layers["a"+count].bgColor=CoLoUrS[count_a];
+else ieDivs[count].style.background=CoLoUrS[count_a];
+setTimeout('colourStep()',100)
+}
+function TwistnSpin(){
+if (!brwsr) ys.style.top=document.body.scrollTop;
+for (i=0; i < dots; i++) 
+ {
+ var allLayers=(document.layers)?document.layers["a"+i]:ieDivs[i].style;
+ allLayers.top=ay+cntr*Math.cos((currStep+i*4)/10.2)*Math.sin(currStep/20);
+ allLayers.left=ax+cntr*Math.sin((currStep+i*4)/10.2)*Math.cos(1+currStep/20);
+ }
+currStep-=step;
+setTimeout("TwistnSpin()",10);
+}
+function CombineNstart(){
+MouseFollow();TwistnSpin();colourStep();
+}
+window.onload=CombineNstart;
+-->
+</script>
+<!--星點圍繞_結束-->
 
 <body background="http://img.funtory.tw/2014/02/140227-Kano/Kano_5a.jpg">
-  <img src="http://ppt.cc/DWCj@.jpg">
+  <img class="top" src="http://ppt.cc/DWCj@.jpg">
   <center>
   <div class="title">
     <a href="index.html">回首頁</a>
@@ -19,6 +95,19 @@
     <a href="picture.html">電影劇照</a>
   </div>
   </center>
+ 
+  <div class="gotop" id="gotop">
+   <img src="top.jpg" style="width: 50px; height: 50px;">
+  </div>
+  
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer>
+    <ul>
+      <li><a href="http://www.universalpictures.com/legal/index.html" target="_blank">使用條款</a></li>
+      <li><a href="http://www.nbcuni.com/privacy/" target="_blank">隱私權政策</a></li>
+      <li><a href="http://www.nbcuni.com/privacy/cookies/" target="_blank">COOKIE POLICY</a></li>
+    </ul>
+  </footer>
  
 </body>
 </html>
